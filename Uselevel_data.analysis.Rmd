@@ -1,0 +1,102 @@
+---
+title: "Uselevel_data.analysis"
+author: "Samantha Bolten"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(car)
+library(lme4)
+library(emmeans)
+library(lmerTest)
+library(MASS)
+library(multcomp)
+library(multcompView)
+library(pbkrtest)
+library(reshape2)
+library(RVAideMemoire)
+library(doBy)
+```
+
+```{r}
+read.csv("UseLevel_data.csv")->UseLevel
+names(UseLevel)[1]<-"Strain"
+```
+
+#Data wrangling
+```{r}
+UseLevel$log_CK<-log10(UseLevel$CK.CFU.ml)
+UseLevel$log_Treatment<-log10(UseLevel$Treatment.CFU.ml)
+
+UseLevel%>%
+  mutate(log_Treatment = replace(log_Treatment, log_Treatment == -Inf, 2))->UseLevel
+
+UseLevel$Log.Reduction <- (UseLevel$log_CK)-(UseLevel$log_Treatment)
+
+UseLevel$ResistanceGene<-as.factor(UseLevel$ResistanceGene)
+UseLevel$ParentvAdapted<-as.factor(UseLevel$ParentvAdapted)
+```
+
+#Summarizing the data
+```{r}
+logCKAvg <- summaryBy(log_CK ~ ParentvAdapted, data=UseLevel, FUN=c(min,max,length,mean,sd))
+logCKAvg
+names(logCKAvg)[names(logCKAvg)=="log_CK.length"] <- "N"
+logCKAvg$log_CK.se <- logCKAvg$log_CK.sd / sqrt(logCKAvg$N)
+logCKAvg
+
+
+LogReductionAvg <- summaryBy(Log.Reduction ~ ParentvAdapted, data=UseLevel, FUN=c(min,max,length,mean,sd))
+LogReductionAvg
+names(LogReductionAvg)[names(LogReductionAvg)=="Log.Reduction.length"] <- "N"
+LogReductionAvg$Log.Reduction.se <- LogReductionAvg$Log.Reduction.sd / sqrt(LogReductionAvg$N)
+LogReductionAvg
+
+RGeneAvg <- summaryBy(Log.Reduction ~ ParentvAdapted+ResistanceGene, data=UseLevel, FUN=c(min,max,length,mean,sd))
+RGeneAvg
+names(RGeneAvg)[names(RGeneAvg)=="Log.Reduction.length"] <- "N"
+RGeneAvg$Log.Reduction.se <- RGeneAvg$Log.Reduction.sd / sqrt(RGeneAvg$N)
+RGeneAvg
+
+```
+
+#Density plot
+```{r}
+UseLevel %>%
+  ggplot(aes(x=Log.Reduction)) +
+  labs(x = "Log reduction", y = "Probability density")+
+  geom_density(aes(fill=ParentvAdapted),alpha=0.6)+
+  scale_fill_manual(labels = c("Parent Strains", "Substreaked Isolates"),values=c("grey0","grey81"))+
+ theme(legend.title=element_blank())+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+panel.background = element_blank(), axis.line = element_line(colour = "black"), legend.text.align = 0)
+ggsave("Figure3.png", width=6, height=4, dpi=600, units=c("in"))
+
+```
+
+#ANOVA for presence of resistance gene on log reductions
+```{r}
+fit0<-lm(Log.Reduction~ResistanceGene+ParentvAdapted,data=UseLevel)
+summary(fit0)
+Anova(fit0,type="III")
+
+shapiro.test(UseLevel$Log.Reduction)
+leveneTest(Log.Reduction~ResistanceGene,data=UseLevel)
+```
+
+#T-test for comparing log reductions of parent strains and substreaked isolates 
+```{r}
+#Unpaired t-tests
+t.test(Log.Reduction ~ ParentvAdapted, data=UseLevel,paired=F)->Ttest_unpaired
+Ttest_unpaired
+
+byf.shapiro(Log.Reduction~ParentvAdapted, data=UseLevel)
+```
+
+

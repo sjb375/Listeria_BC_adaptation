@@ -1,0 +1,68 @@
+﻿Substreaked_isolate,Parent_isolate,mono.spp,WGS or PCR ,fepR_SNP,Mutation type,fepR_mutant,ResistanceGene,MIC type,MICrep,ppm
+H9-0078,R12-0334,mono,PCR,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0079,R9-9908,mono,PCR,N,none,none,1,substreaked_MIC,substreakedMIC_1,6
+H9-0080,R12-0099,mono,WGS   ,P,deletion,frameshift,0,substreaked_MIC,substreakedMIC_1,6
+H9-0081,R12-0359,mono,PCR,N,none,none,1,substreaked_MIC,substreakedMIC_1,6
+H9-0082,R12-0180,mono,WGS,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0083,R12-0326,mono,PCR ,N,none,none,1,substreaked_MIC,substreakedMIC_1,6
+H9-0084,R12-0181,mono,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0085,S10-1873,mono,PCR ,N,none,none,1,substreaked_MIC,substreakedMIC_1,6
+H9-0086,S11-0386,mono,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0087,S11-0136,mono,PCR,P,deletion,frameshift,0,substreaked_MIC,substreakedMIC_1,6
+H9-0088,S11-0272,mono,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0089,S10-1884,mono,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0090,S10-1977,mono,PCR,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0091,S11-0146,mono,PCR,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0092,R12-0133,mono,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0093,S11-0216,mono,PCR,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0094,S11-0432,mono,PCR,N,none,none,1,substreaked_MIC,substreakedMIC_1,6
+H9-0095,R12-0098,mono,WGS,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0096,S10-3467,mono,PCR,P,deletion,frameshift,0,substreaked_MIC,substreakedMIC_1,6
+H9-0097,R12-0260,mono,WGS,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0098,S10-3558,mono,WGS,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0099,R12-0093,mono,PCR,N,none,none,0,substreaked_MIC,substreakedMIC_1,4
+H9-0100,S10-2151,mono,WGS,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0101,R12-0085,mono,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0102,S11-0027,mono,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0103,R9-9884,mono,PCR,N,none,none,1,substreaked_MIC,substreakedMIC_1,6
+H9-0104,R12-0189,mono,PCR,N,none,none,1,substreaked_MIC,substreakedMIC_1,6
+H9-0105,R12-0324,mono,WGS,P,deletion,frameshift,0,substreaked_MIC,substreakedMIC_1,6
+H9-0106,S11-0167,spp,PCR,N,none,none,1,substreaked_MIC,substreakedMIC_1,6
+H9-0107,S11-0456,spp,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,4
+H9-0108,S11-0003,spp,PCR,N,none,none,0,substreaked_MIC,substreakedMIC_1,2
+H9-0109,S10-3425,spp,PCR,N,none,none,1,substreaked_MIC,substreakedMIC_1,6
+H9-0110,S10-2287,spp,PCR,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,4
+H9-0111,S11-0176,spp,WGS,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,4
+H9-0112,S11-0315,spp,WGS,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,4
+H9-0113,S10-3544,spp,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,4
+H9-0114,S10-3605,spp,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,4
+H9-0115,S10-2131,spp,PCR,P,duplication,frameshift,0,substreaked_MIC,substreakedMIC_1,4
+H9-0116,S11-0426,spp,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,4
+H9-0117,R12-0030,spp,PCR,P,deletion,frameshift,0,substreaked_MIC,substreakedMIC_1,4
+H9-0118,S11-0073,spp,PCR,N,none,none,0,substreaked_MIC,substreakedMIC_1,2
+H9-0119,S11-0115,spp,PCR ,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,2
+H9-0120,S11-0119,spp,PCR,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0121,S10-2573,spp,PCR,N,none,none,0,substreaked_MIC,substreakedMIC_1,4
+H9-0122,S10-2558,spp,WGS,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0123,S10-2630,spp,PCR,N,none,none,0,substreaked_MIC,substreakedMIC_1,2
+H9-0124,S11-0322,spp,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,2
+H9-0125,S10-3481,spp,PCR ,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0126,S11-0238,spp,PCR ,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0127,S11-0429,spp,PCR ,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0128,S11-0280,spp,PCR ,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0129,S11-0241,spp,PCR ,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0130,S11-0076,spp,PCR ,N,none,none,0,substreaked_MIC,substreakedMIC_1,4
+H9-0131,S11-0274,spp,WGS,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0132,S10-3513,spp,WGS,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0133,S10-3421,spp,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,4
+H9-0134,S10-3516,spp,WGS,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0135,S11-0060,spp,PCR,N,none,none,1,substreaked_MIC,substreakedMIC_1,6
+H9-0136,S11-0106,spp,PCR,N,none,none,0,substreaked_MIC,substreakedMIC_1,2
+H9-0137,R12-0129,spp,WGS,P,deletion,frameshift,0,substreaked_MIC,substreakedMIC_1,6
+H9-0138,R12-0130,spp,PCR,P,deletion,frameshift,0,substreaked_MIC,substreakedMIC_1,6
+H9-0139,S10-3574,spp,PCR,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0140,S11-0256,spp,PCR,N,none,none,1,substreaked_MIC,substreakedMIC_1,2
+H9-0142,S10-2222,spp,PCR,N,none,none,0,substreaked_MIC,substreakedMIC_1,6
+H9-0143,S10-3496,spp,PCR,P,missense,missense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0144,F6-0674,spp,WGS,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6
+H9-0145,R12-0049,spp,WGS,P,nonsense,nonsense,0,substreaked_MIC,substreakedMIC_1,6

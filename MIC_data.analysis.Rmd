@@ -1,0 +1,181 @@
+---
+title: "MIC_analysis_final"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Load libraries
+```{r}
+library(tidyverse)
+library(dplyr)
+library(plyr)
+library(car)
+library(lme4)
+library(emmeans)
+library(lmerTest)
+library(MASS)
+library(multcomp)
+library(multcompView)
+library(pbkrtest)
+```
+
+#Load in datasets
+```{r}
+All_BC<-read.csv("MIC_data.csv")
+View(All_BC) 
+
+All_BC%>% 
+  mutate(ResistanceGene= ifelse(Locus=="bcrABC" | Locus=="Tn6188",1,0))%>% 
+  mutate(mono.spp=ifelse(Species=="Monocytogenes", "mono", "spp"))%>%
+  mutate(MIC_type=relevel(as.factor(MIC_type),ref="parent_MIC"))->All_BC_resistance
+
+
+All_BC_resistance$MIC_type<-as.factor(All_BC_resistance$MIC_type)
+All_BC_resistance$mono.spp<-as.factor(All_BC_resistance$mono.spp)
+All_BC_resistance$ResistanceGene<-as.factor(All_BC_resistance$ResistanceGene)
+All_BC_resistance$Response_Obj1<-as.factor(All_BC_resistance$Response_Obj1)
+
+names(All_BC_resistance)[1]<-"Strain" 
+
+#Coculture data
+read.csv("CoCultureSummary_data.csv")->Coculture
+names(Coculture)[1]<-"Strain"
+Coculture$MIC_2<-as.factor(Coculture$MIC_2)
+Coculture$Type<-as.factor(Coculture$Type)
+
+#fepR data
+fepR<-read.csv("fepR_SNP_analysis.csv")
+names(fepR)[1]<-"Substreaked_Isolate"
+fepR$fepR_SNP<-as.factor(fepR$fepR_SNP)
+fepR$ResistanceGene<-as.factor(fepR$ResistanceGene)
+fepR$fepR_mutant<-as.factor(fepR$fepR_mutant)
+fepR$MIC.type<-as.factor(fepR$MIC.type)
+
+FoldChange<-read.csv("FoldChange_data.csv")
+names(FoldChange)[1]<-"Strain"
+
+FoldChange%>% 
+  mutate(ResistanceGene= ifelse(Locus=="bcrABC" | Locus=="Tn6188",1,0))%>% 
+  mutate(mono.spp=ifelse(Species=="Monocytogenes", "mono", "spp"))->FoldChange
+
+FoldChange$mono.spp<-as.factor(FoldChange$mono.spp)
+FoldChange$ResistanceGene<-as.factor(FoldChange$ResistanceGene)
+
+```
+
+
+#MIC data analysis
+```{r}
+fit1<-lmer(log2(ppm)~MIC_type+(1|Strain),data=All_BC_resistance)
+Anova(fit1, type="III")
+emm1<-emmeans(fit1,~MIC_type, transform="response")
+cld(emm1)
+
+hist(residuals(fit1))
+plot(predict(fit1),residuals(fit1)) 
+
+
+fit2<-lmer(log2(ppm)~MIC_type*mono.spp+(1|Strain),data=All_BC_resistance)
+summary(fit2)
+Anova(fit2,type="III")
+emm2<-emmeans(fit2,~MIC_type*mono.spp, transform="response")
+cld(emm2)
+
+hist(residuals(fit2))
+plot(predict(fit2),residuals(fit2)) 
+
+
+fit3<-lmer(log2(ppm)~MIC_type*ResistanceGene+(1|Strain),data=All_BC_resistance)
+summary(fit3)
+Anova(fit3,type="III")
+emm3<-emmeans(fit3,~MIC_type*ResistanceGene,transform="response")   
+cld(emm3)
+
+hist(residuals(fit3))
+plot(predict(fit3),residuals(fit3)) 
+
+
+```
+
+#Coculture data analysis
+```{r}
+fit4<-lmer(log2(ppm)~MIC_2+Type+(1|Strain),data=Coculture)
+summary(fit4)
+Anova(fit4,type="III")
+emm4<-emmeans(fit4,~MIC_2+Type, transform="response")
+cld(emm4)
+
+hist(residuals(fit4))
+plot(predict(fit4),residuals(fit4)) 
+```
+
+#fepR data analysis 
+```{r}
+fit5<-lm(log2(ppm)~fepR_SNP,data=fepR)
+summary(fit5)
+Anova(fit5,type="III")
+emm5<-emmeans(fit5,~fepR_SNP, transform="response")
+cld(emm5)
+
+hist(residuals(fit5))
+plot(predict(fit5),residuals(fit5))
+
+
+fit6<-lm(log2(ppm)~fepR_mutant,data=subset(fepR,fepR_mutant=="frameshift"|fepR_mutant=="missense"|fepR_mutant=="nonsense"))
+summary(fit6)
+Anova(fit6,type="III")
+emm6<-emmeans(fit6,~fepR_mutant, transform="response")
+cld(emm6)
+
+hist(residuals(fit6))
+plot(predict(fit6),residuals(fit6))
+```
+
+
+#Fold change data analysis
+```{r}
+fit7<-lmer(log2(foldchange)~mono.spp+fold_compare+(1|Strain),data=subset(FoldChange,fold_compare=="Fold_substreaked_parent"|fold_compare=="Fold_serial_parent"))
+summary(fit7)
+Anova(fit7,type="III")
+emm7<-emmeans(fit7,~fold_compare+mono.spp,transform="response")
+cld(emm7)
+
+hist(residuals(fit7))
+plot(predict(fit7),residuals(fit7))
+
+
+fit8<-lmer(log2(foldchange)~ResistanceGene+fold_compare+(1|Strain),data=subset(FoldChange,fold_compare=="Fold_substreaked_parent"|fold_compare=="Fold_serial_parent"))
+summary(fit8)
+Anova(fit8,type="III")
+emm8<-emmeans(fit8,~fold_compare+ResistanceGene,transform="response")
+cld(emm8)
+
+hist(residuals(fit8))
+plot(predict(fit8),residuals(fit8))
+
+fit9<-lmer(log2(foldchange)~fold_compare+(1|Strain),data=subset(FoldChange,fold_compare=="Fold_substreaked_parent"|fold_compare=="Fold_serial_parent"))
+summary(fit9)
+Anova(fit9,type="III")
+emm9<-emmeans(fit9,~fold_compare,transform="response")
+cld(emm9)
+
+hist(residuals(fit9))
+plot(predict(fit9),residuals(fit9))
+```
+
+
+#Previous classification (top 10% tolerant, top 10% sensitive, or 'average' (11-89th percentile)) to use level data analysis
+```{r}
+fit10<-lmer(log2(ppm)~MIC_type+Response_Obj1+(1|Strain),data=All_BC_resistance)
+summary(fit10)
+Anova(fit10,type="III")
+emm10<-emmeans(fit10,~MIC_type+Response_Obj1,transform="response")
+cld(emm10)
+
+hist(residuals(fit10))
+plot(predict(fit10),residuals(fit10))
+```
+
