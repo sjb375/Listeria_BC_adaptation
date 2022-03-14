@@ -12,29 +12,29 @@ Combo VI,Combo VI,Coculture,10,MIC_afterCoculBefAdpt,MIC_first
 "FSL R12-0334(II, -)",FSL R12-0334,Mono,4,MIC_afterCoculBefAdpt,MIC_first
 "FSL R12-0326 (I,bcrABC)",FSL R12-0326,Mono,8,MIC_afterCoculBefAdpt,MIC_first
 "FSL R12-0189 (I,qacH)",FSL R12-0189,Mono,8,MIC_afterCoculBefAdpt,MIC_first
-Combo I,Combo I,Coculture,14,MIC_adapted,MIC_adapt
-Combo II,Combo II,Coculture,12,MIC_adapted,MIC_adapt
-Combo III,Combo III,Coculture,12,MIC_adapted,MIC_adapt
-Combo IV,Combo IV,Coculture,10,MIC_adapted,MIC_adapt
-Combo V,Combo V,Coculture,12,MIC_adapted,MIC_adapt
-Combo VI,Combo VI,Coculture,12,MIC_adapted,MIC_adapt
-"FSL S11-0432 (II, bcrABC)",FSL S11-0432,Mono,14,MIC_adapted,MIC_adapt
-"FSL S10-1873 (I, bcrABC)",FSL S10-1873,Mono,14,MIC_adapted,MIC_adapt
-"FSL R9-9884 (II, bcrABC)",FSL R9-9884,Mono,12,MIC_adapted,MIC_adapt
-"FSL R12- 0359 (I,bcrABC)",FSL R12-0359,Mono,14,MIC_adapted,MIC_adapt
-"FSL R12-0334(II, -)",FSL R12-0334,Mono,10,MIC_adapted,MIC_adapt
-"FSL R12-0326 (I,bcrABC)",FSL R12-0326,Mono,14,MIC_adapted,MIC_adapt
-"FSL R12-0189 (I,qacH)",FSL R12-0189,Mono,12,MIC_adapted,MIC_adapt
-Combo I,Combo I,Coculture,6,MIC_afterStorageCold,MIC_storage
-Combo II,Combo II,Coculture,6,MIC_afterStorageCold,MIC_storage
-Combo III,Combo III,Coculture,6,MIC_afterStorageCold,MIC_storage
-Combo IV,Combo IV,Coculture,6,MIC_afterStorageCold,MIC_storage
-Combo V,Combo V,Coculture,6,MIC_afterStorageCold,MIC_storage
-Combo VI,Combo VI,Coculture,6,MIC_afterStorageCold,MIC_storage
-"FSL S11-0432 (II, bcrABC)",FSL S11-0432,Mono,6,MIC_afterStorageCold,MIC_storage
-"FSL S10-1873 (I, bcrABC)",FSL S10-1873,Mono,6,MIC_afterStorageCold,MIC_storage
-"FSL R9-9884 (II, bcrABC)",FSL R9-9884,Mono,6,MIC_afterStorageCold,MIC_storage
-"FSL R12- 0359 (I,bcrABC)",FSL R12-0359,Mono,6,MIC_afterStorageCold,MIC_storage
-"FSL R12-0334(II, -)",FSL R12-0334,Mono,6,MIC_afterStorageCold,MIC_storage
-"FSL R12-0326 (I,-)",FSL R12-0326,Mono,6,MIC_afterStorageCold,MIC_storage
-"FSL R12-0189 (I,qacH)",FSL R12-0189,Mono,6,MIC_afterStorageCold,MIC_storage
+Combo I,Combo I,Coculture,14,MIC_BCpassaged,MIC_BCpassaged
+Combo II,Combo II,Coculture,12,MIC_BCpassaged,MIC_BCpassaged
+Combo III,Combo III,Coculture,12,MIC_BCpassaged,MIC_BCpassaged
+Combo IV,Combo IV,Coculture,10,MIC_BCpassaged,MIC_BCpassaged
+Combo V,Combo V,Coculture,12,MIC_BCpassaged,MIC_BCpassaged
+Combo VI,Combo VI,Coculture,12,MIC_BCpassaged,MIC_BCpassaged
+"FSL S11-0432 (II, bcrABC)",FSL S11-0432,Mono,14,MIC_BCpassaged,MIC_BCpassaged
+"FSL S10-1873 (I, bcrABC)",FSL S10-1873,Mono,14,MIC_BCpassaged,MIC_BCpassaged
+"FSL R9-9884 (II, bcrABC)",FSL R9-9884,Mono,12,MIC_BCpassaged,MIC_BCpassaged
+"FSL R12- 0359 (I,bcrABC)",FSL R12-0359,Mono,14,MIC_BCpassaged,MIC_BCpassaged
+"FSL R12-0334(II, -)",FSL R12-0334,Mono,10,MIC_BCpassaged,MIC_BCpassaged
+"FSL R12-0326 (I,bcrABC)",FSL R12-0326,Mono,14,MIC_BCpassaged,MIC_BCpassaged
+"FSL R12-0189 (I,qacH)",FSL R12-0189,Mono,12,MIC_BCpassaged,MIC_BCpassaged
+Combo I,Combo I,Coculture,6,MIC_adapted,MIC_adapt
+Combo II,Combo II,Coculture,6,MIC_adapted,MIC_adapt
+Combo III,Combo III,Coculture,6,MIC_adapted,MIC_adapt
+Combo IV,Combo IV,Coculture,6,MIC_adapted,MIC_adapt
+Combo V,Combo V,Coculture,6,MIC_adapted,MIC_adapt
+Combo VI,Combo VI,Coculture,6,MIC_adapted,MIC_adapt
+"FSL S11-0432 (II, bcrABC)",FSL S11-0432,Mono,6,MIC_adapted,MIC_adapt
+"FSL S10-1873 (I, bcrABC)",FSL S10-1873,Mono,6,MIC_adapted,MIC_adapt
+"FSL R9-9884 (II, bcrABC)",FSL R9-9884,Mono,6,MIC_adapted,MIC_adapt
+"FSL R12- 0359 (I,bcrABC)",FSL R12-0359,Mono,6,MIC_adapted,MIC_adapt
+"FSL R12-0334(II, -)",FSL R12-0334,Mono,6,MIC_adapted,MIC_adapt
+"FSL R12-0326 (I,-)",FSL R12-0326,Mono,6,MIC_adapted,MIC_adapt
+"FSL R12-0189 (I,qacH)",FSL R12-0189,Mono,6,MIC_adapted,MIC_adapt

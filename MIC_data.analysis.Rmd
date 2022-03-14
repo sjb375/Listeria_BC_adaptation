@@ -137,7 +137,7 @@ plot(predict(fit6),residuals(fit6))
 
 #Fold change data analysis
 ```{r}
-fit7<-lmer(log2(foldchange)~mono.spp+fold_compare+(1|Strain),data=subset(FoldChange,fold_compare=="Fold_substreaked_parent"|fold_compare=="Fold_serial_parent"))
+fit7<-lmer(log2(foldchange)~mono.spp+fold_compare+(1|Strain),data=subset(FoldChange,fold_compare=="Fold_adapted_parent"|fold_compare=="Fold_serial_parent"))
 summary(fit7)
 Anova(fit7,type="III")
 emm7<-emmeans(fit7,~fold_compare+mono.spp,transform="response")
@@ -147,7 +147,7 @@ hist(residuals(fit7))
 plot(predict(fit7),residuals(fit7))
 
 
-fit8<-lmer(log2(foldchange)~ResistanceGene+fold_compare+(1|Strain),data=subset(FoldChange,fold_compare=="Fold_substreaked_parent"|fold_compare=="Fold_serial_parent"))
+fit8<-lmer(log2(foldchange)~ResistanceGene+fold_compare+(1|Strain),data=subset(FoldChange,fold_compare=="Fold_adapted_parent"|fold_compare=="Fold_serial_parent"))
 summary(fit8)
 Anova(fit8,type="III")
 emm8<-emmeans(fit8,~fold_compare+ResistanceGene,transform="response")
@@ -156,7 +156,7 @@ cld(emm8)
 hist(residuals(fit8))
 plot(predict(fit8),residuals(fit8))
 
-fit9<-lmer(log2(foldchange)~fold_compare+(1|Strain),data=subset(FoldChange,fold_compare=="Fold_substreaked_parent"|fold_compare=="Fold_serial_parent"))
+fit9<-lmer(log2(foldchange)~fold_compare+(1|Strain),data=subset(FoldChange,fold_compare=="Fold_adapted_parent"|fold_compare=="Fold_serial_parent"))
 summary(fit9)
 Anova(fit9,type="III")
 emm9<-emmeans(fit9,~fold_compare,transform="response")
